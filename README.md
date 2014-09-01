@@ -3,14 +3,14 @@
 Tested on Centos 6.5
 
 ## Attributes
-
+```ruby
  default['ssh_banner']['sshd_config_file']  = "/etc/ssh/sshd_config"
  default['ssh_banner']['sshd_init_service'] = "/etc/init.d/sshd"
  default['ssh_banner']['sshd']['service'] = "sshd"
  default['ssh_banner']['sshd_banner_file'] = "chef_ssh_banner"
  default['ssh_banner']['paranoic_mode_time'] = 20
  default['ssh_banner']['sshd_banner_dir'] = "/etc/ssh"
-
+```
 
 ## Usage
 
@@ -22,7 +22,7 @@ Tested on Centos 6.5
 #### Add banner in paranoid mode.
 
  using paranoid mode, chef will replace sshd_config with your new banner and will do a rollback of configuration after node[‘ssh_banner']['paranoic_mode_time'] seconds.
-
+```ruby
  ssh_banner_banner  "banner" do
    banner_file _banner_file
    sshd_config_file  node['ssh_banner']['sshd_config_file']
@@ -30,10 +30,10 @@ Tested on Centos 6.5
    action :create
    notifies :restart, "service[sshd]"
  end
-
+```
 
 #### Add new banner:
-
+```ruby
  ssh_banner_banner  "banner" do
    banner_file _banner_file
    sshd_config_file  node['ssh_banner']['sshd_config_file']
@@ -41,9 +41,9 @@ Tested on Centos 6.5
    action :create
    notifies :restart, "service[sshd]"
  end
-
+```
 #### Delete banner:
-
+```ruby
  ssh_banner_banner  "banner" do 
    banner_file _banner_file
    sshd_config_file  node['ssh_banner']['sshd_config_file']
@@ -51,7 +51,7 @@ Tested on Centos 6.5
    action :delete
    notifies :restart, "service[sshd]"
  end
-
+```
 
 ## Author
 
