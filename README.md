@@ -26,13 +26,13 @@ Tested on Centos 6.5
  ssh_banner_banner  "banner" do
    banner_file _banner_file
    sshd_config_file  node['ssh_banner']['sshd_config_file']
-   paranoic_mode false
+   paranoic_mode true
    action :create
    notifies :restart, "service[sshd]"
  end
 ```
 
-#### Add new banner:
+#### Add new banner (normal mode):
 ```ruby
  ssh_banner_banner  "banner" do
    banner_file _banner_file
