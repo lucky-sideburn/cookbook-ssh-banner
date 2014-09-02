@@ -1,6 +1,3 @@
-## Supported Platforms
-
-Tested on Centos 6.5
 
 ## Attributes
 

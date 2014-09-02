@@ -26,7 +26,7 @@ ssh_banner_banner  "banner" do
   banner_file _banner_file
   sshd_config_file  node['ssh_banner']['sshd_config_file']
   paranoic_mode false
-  action :create
+  action :delete
   notifies :restart, "service[sshd]"
 end
 
