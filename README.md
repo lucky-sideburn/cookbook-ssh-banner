@@ -49,7 +49,3 @@
    notifies :restart, "service[sshd]"
  end
 ```
-
-## Author
-
- Author:: Eugenio Marzo (eugenio.marzo@yahoo.it)
